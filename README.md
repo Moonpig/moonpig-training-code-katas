@@ -1,2 +1,2 @@
 # moonpig-training-code-katas
-A repository containing katas the we have tried at Moonpig
+A repository containing katas that we have tried at Moonpig
