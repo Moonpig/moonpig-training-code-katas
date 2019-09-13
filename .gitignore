@@ -1,0 +1,7 @@
+BDDfy.html
+
+.vs/
+bin/
+obj/
+packages/
+.DS_Store
