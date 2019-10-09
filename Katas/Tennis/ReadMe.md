@@ -28,3 +28,13 @@ Only the score is reported for the current game. Sets and Matches are out of sco
 ### Solutions
 
 [A solution in Java ](https://github.com/ValentinaServile/Tennis-Refactoring-Kata-Java/tree/master/src/main/java)
+
+## Learnings
+
+Weds Oct 9th 2019:
+
+Represented scores such as Deuce and Advantage as objects who know how to print themselves.
+
+Refactoring following the Calisthenics in order was a bit slow, since you would normally do a few Calisthenics refactorings in one go rather than one after the other. eg: One Level Of Indentation Per Method can be done on the same piece of code while applying another refactoring.
+
+Refactorings could be planned and prioritised for better results.
