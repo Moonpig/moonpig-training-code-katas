@@ -18,3 +18,13 @@ You can read more about Tennis scores [here](https://en.wikipedia.org/wiki/Tenni
 You should not need to change the tests, only run them often as you refactor.
 
 Only the score is reported for the current game. Sets and Matches are out of scope.
+
+### Refactoring techniques:
+
+[Object Calisthenics](https://williamdurand.fr/2013/06/03/object-calisthenics/)
+
+[Other techniques](https://refactoring.guru/refactoring/techniques)
+
+### Solutions
+
+[A solution in Java ](https://github.com/ValentinaServile/Tennis-Refactoring-Kata-Java/tree/master/src/main/java)
