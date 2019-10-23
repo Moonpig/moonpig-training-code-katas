@@ -13,7 +13,8 @@ Pacman finds himself in a grid filled with monsters. Will he be able to eat all 
 Incomplete list of things the game needs:
 
 * pacman is on a grid filled with dots
-* pacman has a direction* pacman moves on each tick
+* pacman has a direction
+* pacman moves on each tick
 * user can rotate pacman
 * pacman eats dots
 * pacman wraps around
