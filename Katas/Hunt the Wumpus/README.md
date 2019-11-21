@@ -42,3 +42,12 @@ In each room you may:
 A startled Wumpus may stay where it is, or it may move to a random room in the cave. If the Wumpus moves then it makes enough noise that the player will hear it move - though of course they will not know where the Wumpus has hidden!
 
 Good hunting!
+
+## Learnings
+
+### Wed 20th Nov 2019
+
+* Tricky to map caves to appropriate data structure
+* Should the room know about the player or should the player know which room they are in?
+* How do we keep track of rooms you've previously entered?
+* Naming - choosing domain names (eg: doors) vs names good for programming   
