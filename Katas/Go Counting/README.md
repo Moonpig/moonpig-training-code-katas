@@ -15,7 +15,7 @@ The dots on empty spaces are just to make the examples easier to comprehend.
 |OXX..|
 |XX...|
 +-----+
-X = 10 points
+X = 9 points
 O = 5 points
 ```
 It is also possible for an enclosed territory to be completely surrounded by the enemy.
