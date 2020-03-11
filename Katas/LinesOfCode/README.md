@@ -31,7 +31,7 @@ and...
     }
 ```
 
-Java comments are either // to the end of line, or /* to the next */. The block comments do not nest. There may be multiple /* … */ comments on a line. Whitespace includes tabs, spaces, carriage returns, and vertical tabs. Oh, and remember that comment start sequences that appear inside Java strings should be ignored.
+Java comments are either `//` to the end of line, or `/*` to the next `*/`. The block comments do not nest. There may be multiple /* … */ comments on a line. Whitespace includes tabs, spaces, carriage returns, and vertical tabs. Oh, and remember that comment start sequences that appear inside Java strings should be ignored.
 
 ## Goals of the Kata
 
