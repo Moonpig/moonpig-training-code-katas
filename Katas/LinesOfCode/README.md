@@ -25,14 +25,31 @@ and...
     public class Hello {
         public static final void main(String [] args) { // gotta love Java
           // Say hello
-          System./*wait*/out./*for*/println/*it*/("Hello/*");
+          System./*wait*/out./*for*/println/*it*/("Hello");
         }
 
     }
 ```
 
-Java comments are either `//` to the end of line, or `/*` to the next `*/`. The block comments do not nest. There may be multiple /* … */ comments on a line. Whitespace includes tabs, spaces, carriage returns, and vertical tabs. Oh, and remember that comment start sequences that appear inside Java strings should be ignored.
+Java comments are either `//` to the end of a line, or `/*` to the next `*/`. The block comments do not nest. There may be multiple `/*` … `*/` comments on a line. Whitespace includes tabs, spaces, carriage returns, and vertical tabs. Oh, and remember that comment start/end sequences that appear inside Java strings should be ignored - and that string delimeters themselves can be escaped within strings!
 
+```Java
+    // This example has 5 lines of code
+    public static void main(String[] args) {
+        String a = "*/";
+        int i = 5;
+        String b = "/*";
+    }
+```
+
+```Java
+    //This also has 5 lines of code
+    public static void main(String[] args) {
+        String a = "\"/*";
+        int i = 5;
+        String b = "*/";
+    }
+```
 ## Goals of the Kata
 
 The mixture of line-based things (single line comments, blank lines, and so on) with the stream-based block comments can make solutions slightly ugly. While coding your solution, consider the structure of your code, and see how well it fits the structure of the problem.
