@@ -14,7 +14,7 @@ You start with a two dimensional grid of cells, where each cell is either alive 
    4. Any dead cell with exactly three live neighbours becomes a live cell.
 ```
 
-Each cell (C) has 8 neighbours(N):
+In general, a cell (C) has 8 neighbours (N):
 
 ```
 ~~~~~
@@ -23,6 +23,7 @@ Each cell (C) has 8 neighbours(N):
 ~NNN~
 ~~~~~
 ```
+Note that edge cells and corner cells have less neighbours as there are no cells outside of the grid.
 
 # The task
 
