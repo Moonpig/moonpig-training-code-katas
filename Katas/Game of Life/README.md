@@ -24,6 +24,8 @@ Each cell (C) has 8 neighbours(N):
 ~~~~~
 ```
 
+# The task
+
 You should write a program that can accept an initial arbitrary representation of the game state, and will return the next generation.
 
 The initial pattern constitutes the seed of the system. The first generation is created by applying the above rules simultaneously to every cell in the seed; births and deaths occur simultaneously, and the discrete moment at which this happens is sometimes called a tick. Each generation is a pure function of the preceding one. The rules continue to be applied repeatedly to create further generations.
