@@ -25,7 +25,7 @@ In general, a cell (C) has 8 neighbours (N):
 ```
 Note that edge cells and corner cells have less neighbours as there are no cells outside of the grid.
 
-# The task
+# The Task
 
 You should write a program that can accept an initial arbitrary representation of the game state, and will return the next generation.
 
