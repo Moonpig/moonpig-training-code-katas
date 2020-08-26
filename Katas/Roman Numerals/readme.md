@@ -8,8 +8,15 @@ The Romans wrote numbers using letters : I, V, X, L, C, D, M. (notice these lett
 The Kata says you should write a function to convert from normal numbers to Roman Numerals: eg
 
      1 --> I
-     10 --> X
+     2 --> II
+     3 --> III
+     4 --> IV
+     5 --> V
+     6 --> VI
      7 --> VII
+     8 --> VIII
+     9 --> IX
+     10 --> X
 etc.
 
 For a full description of how it works, take a look at [this useful reference website](http://www.novaroma.org/via_romana/numbers.html)  which includes an implementation of the Kata in javascript.
