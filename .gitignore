@@ -5,3 +5,5 @@ bin/
 obj/
 packages/
 .DS_Store
+/Katas/GildedRose/dotnetcore/GildedRose.Tests/ApprovalTest.ThirtyDays.approved.txt
+/Katas/GildedRose/dotnetcore/GildedRose.Tests/ApprovalTest.ThirtyDays.received.txt
