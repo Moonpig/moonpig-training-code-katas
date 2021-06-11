@@ -5,7 +5,7 @@ One interacts with the Game of Life by creating an initial configuration and obs
 
 # Rules of the Game
 
-You start with a two dimensional grid of cells, where each cell is either alive or dead. In this version of the problem, the grid is finite, and no life can exist off the edges. When calcuating the next generation of the grid, follow these rules:
+A square grid contains cells that are either alive or dead. The behaviour of each cell is dependent only on the state of its eight immediate neighbours, according to the following rules:
 
 ```
    1. Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.
@@ -14,16 +14,21 @@ You start with a two dimensional grid of cells, where each cell is either alive 
    4. Any dead cell with exactly three live neighbours becomes a live cell.
 ```
 
+We start with a pattern on the grid (generation 0) and we apply the rules simultaneously on all cells. This action results in a new pattern (generation 1). We then apply the rules again on all the cells, which creates another pattern (generation 2), and so on, and so on.
+
 In general, a cell (C) has 8 neighbours (N):
 
 ```
-~~~~~
-~NNN~
-~NCN~
-~NNN~
-~~~~~
+| ~ | ~ | ~ | ~ | ~ | 
+| ~ | ~ | ~ | ~ | ~ |
+| ~ | N | N | N | ~ |
+| ~ | N | C | N | ~ |
+| ~ | N | N | N | ~ |
+| ~ | ~ | ~ | ~ | ~ |
+| ~ | ~ | ~ | ~ | ~ |
 ```
 Note that edge cells and corner cells have less neighbours as there are no cells outside of the grid.
+Note that in this version of the problem, the grid is finite, and no life can exist off the edges.
 
 # The Task
 
