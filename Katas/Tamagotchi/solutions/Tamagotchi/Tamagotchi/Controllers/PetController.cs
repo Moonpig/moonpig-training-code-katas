@@ -12,11 +12,11 @@ namespace Tamagotchi.Controllers
     [Route("[controller]")]
     public class PetController : ControllerBase
     {
-        public List<IPet> Pets { get; set; }
+        public List<Pet> Pets { get; set; }
 
         public PetController()
         {
-            Pets = new List<IPet>()
+            Pets = new List<Pet>()
             {
                 new Dog()
                 {
@@ -35,7 +35,7 @@ namespace Tamagotchi.Controllers
        
         
         [HttpGet]
-        public List<IPet> Get()
+        public List<Pet> Get()
         {
             return Pets;
         }

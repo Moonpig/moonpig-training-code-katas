@@ -1,6 +1,6 @@
 namespace Tamagotchi.Models
 {
-    public class Dog : IPet
+    public class Dog : Pet
     {
         public string Type { get; set; }
         public int Happiness { get; set; }
