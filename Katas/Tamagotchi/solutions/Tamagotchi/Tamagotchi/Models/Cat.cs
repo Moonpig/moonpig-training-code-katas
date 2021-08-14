@@ -1,6 +1,6 @@
 namespace Tamagotchi.Models
 {
-    public class Dog : Pet
+    public class Cat : Pet
     {
         public int Feed()
         {
