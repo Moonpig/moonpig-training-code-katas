@@ -1,6 +1,9 @@
 using System.Collections.Generic;
+using System.Linq;
+using DataDtore.EF.Models;
+using DataStore.EF;
 using Microsoft.AspNetCore.Mvc;
-using Tamagotchi.Models;
+// using System.LocalDataStoreSlot.EF;
 
 namespace DefaultNamespace
 {
@@ -8,55 +11,49 @@ namespace DefaultNamespace
     [Route("[controller]")]
     public class UsersController : ControllerBase
     {
-        
-        public List<User> Users { get; set; }
+        private readonly PetContext _db;
 
-        public UsersController()
+
+        public UsersController(PetContext db)
         {
-            Users = new List<User>()
-            {
-                new User()
-                {
-                    UserId = 1,
-                    OwnerName = "John",
-                },
-                new User()
-                {
-                    UserId = 2,
-                    OwnerName = "Sara",
-                    Pets = new List<Pet>()
-                }
-            };
+            _db = db;
         }
         
         [HttpGet]
         public List<User> Get()
         {
-            return Users;
+            return _db.Users.ToList();
         }
         
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            return Ok($"Reading the user #{id}.");
+            var user = _db.Users.Find((id));
+            if (user == null)
+                return NotFound();
+            
+            return Ok(user);
         }
 
         [HttpGet]
         [Route("/users/{uId}/pets")]
         public IActionResult GetUserPet(int uId,[FromQuery] int petId)
         {
-            if (petId == 0)
-            {
-                return Ok($"Reading all the tickets belong to the project #{uId}.");
-            }
-            return Ok($"Reading the project #{uId}, ticket #{petId}.");
+            var pets = _db.Pets.Where(p => p.UserId == uId).ToList();
+            if (pets == null || pets.Count <= 0)
+                return NotFound();
+
+            return Ok(pets);
         }
         
-        [HttpPost]
-        public IActionResult Post()
-        {
-            return Ok("add a user");
-        }
+        // [HttpPost]
+        // public IActionResult Post([FromBody] User user)
+        // {
+        //     _db.Users.Add(user);
+        //     // _db.SavedChanges();
+        //     
+        //     return CreatedAtAction((nameof(GetById), ))
+        // }
         [HttpPost]
         public User AddUser([FromBody]int id, string name)
         {

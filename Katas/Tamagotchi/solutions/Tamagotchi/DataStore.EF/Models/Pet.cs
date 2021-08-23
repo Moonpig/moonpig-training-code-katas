@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Tamagotchi.Models
+namespace DataDtore.EF.Models
 {
     public class Pet
     {

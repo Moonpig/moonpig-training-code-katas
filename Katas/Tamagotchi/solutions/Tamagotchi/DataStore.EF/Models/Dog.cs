@@ -1,6 +1,6 @@
-namespace Tamagotchi.Models
+namespace DataDtore.EF.Models
 {
-    public class Cat : Pet
+    public class Dog : Pet
     {
         public int Feed()
         {

@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tamagotchi", "Tamagotchi\Tamagotchi.csproj", "{C5D4001B-8491-42F5-A805-3A670AB26759}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStore.EF", "DataStore.EF\DataStore.EF.csproj", "{AD8CE653-7367-42D7-8C0B-75AAF79924A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{C5D4001B-8491-42F5-A805-3A670AB26759}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5D4001B-8491-42F5-A805-3A670AB26759}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5D4001B-8491-42F5-A805-3A670AB26759}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD8CE653-7367-42D7-8C0B-75AAF79924A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD8CE653-7367-42D7-8C0B-75AAF79924A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD8CE653-7367-42D7-8C0B-75AAF79924A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD8CE653-7367-42D7-8C0B-75AAF79924A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
