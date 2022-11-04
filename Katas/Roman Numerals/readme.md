@@ -1,27 +1,23 @@
-# Problem Description
+## Roman Numerals
 
-The Romans were a clever bunch. They conquered most of Europe and ruled it for hundreds of years. They invented concrete and straight roads and even bikinis. One thing they never discovered though was the number zero. This made writing and dating extensive histories of their exploits slightly more challenging, but the system of numbers they came up with is still in use today. For example the BBC uses Roman numerals to date their programmes.
+Write a program to convert Decimal numbers into their Roman numeral equivalents.
 
-The Romans wrote numbers using letters : I, V, X, L, C, D, M. (notice these letters have lots of straight lines and are hence easy to hack into stone tablets)
+A table of Decimal numbers in their Roman numeral equivalents: 
 
-## Part I
-The Kata says you should write a function to convert from normal numbers to Roman Numerals: eg
+| Number  | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |    
+|---------|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| Numeral | I   | II  | II  | III | IV  | V   | VI  | VII | IX  |
 
-     1 --> I
-     2 --> II
-     3 --> III
-     4 --> IV
-     5 --> V
-     6 --> VI
-     7 --> VII
-     8 --> VIII
-     9 --> IX
-     10 --> X
-etc.
+| Number  | 10  | 20  | 30  | 40  | 50  | 60  | 70  | 80   | 90  |    
+|---------|-----|-----|-----|-----|-----|-----|-----|------|-----|
+| Numeral | X   | XX  | XXX | XL  | L   | LX  | LXX | LXXX | XC  |
 
-For a full description of how it works, take a look at [this useful reference website](http://www.novaroma.org/via_romana/numbers.html)  which includes an implementation of the Kata in javascript.
+### Getting Started
 
-There is no need to be able to convert numbers larger than about 3000. (The Romans themselves didn’t tend to go any higher)
+Your implementation should contain a method similar to:
 
-## Part II
-Write a function to convert in the other direction, ie numeral to digit
+```fun convert(int amount): String```
+
+### Hints
+
+If you get stuck on a conversion, move on to another one and come back to it later.
