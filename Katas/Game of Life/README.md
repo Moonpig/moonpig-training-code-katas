@@ -17,12 +17,12 @@ the next generation. A generation is created by applying all the above rules to 
 deaths occur simultaneously, and the discrete moment at which this happens is sometimes called a tick.
 Each generation is a pure function of the preceding one.
 
-## Other requirements
+## The Task
 
 In this version of the problem:
 
 1. The grid is finite and no life can exist off the edges.
-2. You start with a two dimensional grid of cells, where each cell is either alive or dead.
+2. You start with a two-dimensional grid of cells, where each cell is either alive or dead.
 3. Only one tick is needed.
 4. Neighbours can be diagonal to each other.
 
