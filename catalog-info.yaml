@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1
+kind: System
+metadata:
+  name: moonpig-training-code-katas
+  annotations:
+    github.com/project-slug: Moonpig/moonpig-training-code-katas
+spec:
+  owner: unknown
+  lifecycle: unknown
