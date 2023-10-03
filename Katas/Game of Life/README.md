@@ -18,8 +18,7 @@ A generation is created by applying all of the above rules to each and every cel
 
 ## The Task
 
-You should write a program that accepts an initial arbitrary grid of cells, runs a single tick on the grid, and outputs a similar grid representating
-the next generation.
+You should write a program that accepts an initial arbitrary grid of cells, runs a single tick on the grid, and outputs a grid representing the next generation.
 
 In this version of the problem:
 
