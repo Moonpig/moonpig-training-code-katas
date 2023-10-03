@@ -12,18 +12,20 @@ When calculating the next generation of the grid, follow these rules:
 3. Any live cell with two or three live neighbours lives on to the next generation.
 4. Any dead cell with exactly three live neighbours becomes a live cell.
 
-You should write a program that can accept an initial arbitrary grid of cells, and will output a similar grid showing
-the next generation. A generation is created by applying all the above rules to every cell in the seed; births and
-deaths occur simultaneously, and the discrete moment at which this happens is sometimes called a tick.
-Each generation is a pure function of the preceding one.
+A neighbour is any of the eight cells immeadiately surrounding a cell, including diagonals.
+
+A generation is created by applying all of the above rules to each and every cell in the seed. Births and deaths occur simultaneously. This process is called a tick. We can run multiple ticks by treating the output of one generation as the input for the next.
 
 ## The Task
+
+You should write a program that accepts an initial arbitrary grid of cells, runs a single tick on the grid, and outputs a similar grid representating
+the next generation.
 
 In this version of the problem:
 
 1. The grid is finite and no life can exist off the edges.
-2. You start with a two-dimensional grid of cells, where each cell is either alive or dead.
-3. Only one tick is needed.
-4. Neighbours can be diagonal to each other.
+2. You only need to calculate a single tick.
+3. You do not need to build any UI or user-facing parts of the system.
+4. You may pick any convenient way of representing the input/output grid.
 
 This website might be helpful in visualising a tick: https://playgameoflife.com/.
