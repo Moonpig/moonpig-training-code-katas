@@ -4,9 +4,9 @@ Write a program to convert Decimal numbers into their Roman numeral equivalents.
 
 A table of Decimal numbers in their Roman numeral equivalents: 
 
-| Number  | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |    
-|---------|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-| Numeral | I   | II  | II  | III | IV  | V   | VI  | VII | IX  |
+| Number  | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8    | 9   |    
+|---------|-----|-----|-----|-----|-----|-----|-----|------|-----|
+| Numeral | I   | II  | III | IV  |  V  | VI  | VII | VIII | IX  |
 
 | Number  | 10  | 20  | 30  | 40  | 50  | 60  | 70  | 80   | 90  |    
 |---------|-----|-----|-----|-----|-----|-----|-----|------|-----|
