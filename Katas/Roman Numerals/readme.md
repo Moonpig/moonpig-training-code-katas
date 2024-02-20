@@ -16,7 +16,7 @@ A table of Decimal numbers in their Roman numeral equivalents:
 
 Your implementation should contain a method similar to:
 
-```fun convert(int amount): String```
+```fun convert(amount: Int): String```
 
 ### Hints
 
