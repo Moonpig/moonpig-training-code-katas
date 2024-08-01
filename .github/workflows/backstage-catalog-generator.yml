@@ -1,0 +1,19 @@
+name: backstage catalog generator
+on:
+  schedule:
+    - cron: '0 9 * * 1' # Runs at 9am every monday
+  workflow_dispatch: # Allows manual triggering of the workflow
+permissions:
+  id-token: write # permission to request a JWT token from GitHub's OIDC and use with AWS AssumeRoleWithWebIdentity
+  packages: read
+  contents: write
+  pull-requests: write
+jobs:
+  backstage-catalog:
+    uses: Moonpig/moonpig-eng-backstage-catalog-generator/.github/workflows/run.yml@master
+    with:
+      component-name: mnpg-training-code-katas
+      repository-fullname: ${{ github.repository }}
+      repository-description: ${{ github.event.repository.description }}
+      commit-to-master: true
+    secrets: inherit
