@@ -12,7 +12,7 @@ When calculating the next generation of the grid, follow these rules:
 3. Any live cell with two or three live neighbours lives on to the next generation.
 4. Any dead cell with exactly three live neighbours becomes a live cell.
 
-A neighbour is any of the eight cells immeadiately surrounding a cell, including diagonals.
+A neighbour is any of the eight cells immediately surrounding a cell, including diagonals.
 
 A generation is created by applying all of the above rules to each and every cell in the seed. Births and deaths occur simultaneously. This process is called a tick. We can run multiple ticks by treating the output of one generation as the input for the next.
 
