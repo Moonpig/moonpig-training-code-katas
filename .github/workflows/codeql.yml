@@ -1,0 +1,110 @@
+name: "CodeQL Advanced Scanning"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+# CodeQL Build Mode can be set to autobuild, manual or none    
+env:
+  csharp: manual
+  # cpp: 
+  # go:
+  # java:
+  # javascript:
+  # python:
+  # ruby:
+  # typescript:
+  # kotlin: manual
+  # swift: manual
+
+jobs:
+  create-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.languages }}
+    steps:
+      - name: Get languages from repo
+        id: set-matrix
+        uses: advanced-security/set-codeql-language-matrix@v1
+        with:
+          access-token: ${{ secrets.GITHUB_TOKEN }}
+          endpoint: ${{ github.event.repository.languages_url }}
+
+  analyze:
+    needs: create-matrix
+    if: ${{ needs.create-matrix.outputs.matrix != '[]' }}
+    name: Analyze (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    permissions:
+      # required for all workflows
+      security-events: write
+      # only required for workflows in private repositories
+      actions: read
+      contents: read
+      # required to fetch internal or private CodeQL packs
+      packages: read
+
+    strategy:
+      fail-fast: false
+      matrix: 
+        language: ${{ fromJSON(needs.create-matrix.outputs.matrix) }}
+    
+    steps:
+
+    - name: Generate GH App Token
+      id: generate-token
+      uses: actions/create-github-app-token@v2
+      with:
+        app-id:      ${{ secrets.MNPG_GITHUB_READ_APP_ID }}
+        owner:       ${{ github.repository_owner }}
+        private-key: ${{ secrets.MNPG_GITHUB_READ_APP_PEM_FILE }}
+        repositories: "moonpig-ops-pipeline-workflows"
+    
+    - if: ${{ matrix.language == 'csharp' }}
+      name: Setup Nuget Source
+      uses: moonpig/moonpig-ops-pipeline-workflows/.github/actions/dotnet-nuget-setup@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Checkout repository
+      uses: actions/checkout@v6
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v4
+      with:
+        config-file: moonpig/moonpig-ops-pipeline-workflows/codeql/codeql-config.yaml@master
+        external-repository-token: ${{ steps.generate-token.outputs.token }}
+        languages: ${{ matrix.language }}
+        build-mode: ${{ env[format(matrix.language)] }}
+
+    - if: ${{ env[format(matrix.language)] == 'manual' }}
+      name: Build my app
+      run: echo -n "TESTING THIS CONFIG"   
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v4
+      with:
+        category: "/language:${{ matrix.language }}"
+            
+    - if: ${{always() && (failure() || cancelled())}}
+      name: Slack Notification
+      uses: slackapi/slack-github-action@v2.0.0
+      with: 
+          webhook: ${{ secrets.MNPG_CODEQL_SLACK_WEBHOOK_URL }}
+          webhook-type: webhook-trigger
+          payload: |
+            {
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "*🚨  CodeQL Analyze `${{ matrix.language }}` Job Failed:* <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}| ${{github.repository}}>"
+                }
+              }
+            ]
+            }
