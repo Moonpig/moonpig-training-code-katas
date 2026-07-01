@@ -4,6 +4,7 @@ BDDfy.html
 bin/
 obj/
 packages/
+node_modules/
 .DS_Store
 /Katas/GildedRose/dotnetcore/GildedRose.Tests/ApprovalTest.ThirtyDays.approved.txt
 /Katas/GildedRose/dotnetcore/GildedRose.Tests/ApprovalTest.ThirtyDays.received.txt

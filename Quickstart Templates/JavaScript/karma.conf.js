@@ -19,9 +19,15 @@ module.exports = function (config) {
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
-        autoWatch: true,
-        browsers: ['Chrome'],
-        singleRun: false,
+        autoWatch: false,
+        browsers: [process.env.CHROME_BIN ? 'ChromeHeadless' : 'Chrome'],
+        customLaunchers: {
+            ChromeHeadless: {
+                base: 'Chrome',
+                flags: ['--no-sandbox', '--headless', '--disable-gpu']
+            }
+        },
+        singleRun: true,
         concurrency: Infinity
     });
 };
